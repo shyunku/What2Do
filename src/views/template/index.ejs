@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+    <head>
+        <%- include("../shared/header.ejs") %>
+        <title>What2Do</title>
+    </head>
+    <body>
+        <div class="left_sidemenu">
+            <div id="account_info_wrapper">
+                Account Info
+            </div>
+            <ul class="left-sidemenu__list">
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-home"></i>
+                    <span>홈</span>
+                </li>
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-star"></i>
+                    <span>중요</span>
+                </li>
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-spinner"></i>
+                    <span>진행 중</span>
+                </li>
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-check-square"></i>
+                    <span>완료됨</span>
+                </li>
+            </ul>
+            <ul class="left-sidemenu__list left-sidemenu__category-list">
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-list"></i>
+                    <span>오우</span>
+                </li>
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-list"></i>
+                    <span>조치</span>
+                </li>
+                <li class="left-sidemenu__list-item">
+                    <i class="fas fa-list"></i>
+                    <span>실치</span>
+                </li>
+               
+            </ul>
+            <div class="left-sidemenu__add">
+                <div class="left-sidemenu__add-column">
+                    <i class="fas fa-plus"></i>
+                    <span>새 목록</span>
+                </div>
+                <div class="left-sidemenu__add-column">
+                    <i class="fas fa-folder-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div id="main_body_wrapper">
+            <div id="main_body">
+                <div id="body_header">
+                    <div class="main-title-bar">
+                        <i id="home_icon" class="fas fa-home">&nbsp;Home</i>
+                    </div>
+                    <div class="item-viz-methods-wrapper">
+                        <div class="item-classify-methods-wrapper">
+                            <div class="item-classify-method item-viz-method">시간별 보기</div><!--
+                            --><div class="item-classify-method item-viz-method">일별 보기</div><!--
+                            --><div class="item-classify-method item-viz-method">월별 보기</div><!--
+                            --><div class="item-classify-method item-viz-method">년별 보기</div>
+                        </div>
+                        <div class="item-sort-methods-wrapper">
+                            <div class="item-sort-method item-viz-method">기한 오름차순</div><!--
+                            --><div class="item-sort-method item-viz-method">중요도 오름차순</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="todo-list">
+                    <% for(let i=0;i<35;i++){%>
+                        <div class="todo-item">
+                            <span class="item-title">오우 ㅋㅋ 조치 ㅋㅋ&nbsp;<%= i %></span>
+                            <div class="item-property-wrapper">
+                                <span class="item-deadline">2019년 3월 14일</span>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div id="right_sidemenu">
+        </div>
+    </body>
+</html>
