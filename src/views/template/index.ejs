@@ -2,6 +2,7 @@
 <html lang="ko-kr">
     <head>
         <%- include("../shared/header.ejs") %>
+        <script src="js/home.js"></script>
         <title>What2Do</title>
     </head>
     <body>
@@ -72,14 +73,9 @@
                     </div>
                 </div>
                 <div class="todo-list">
-                    <% for(let i=0;i<35;i++){%>
-                        <div class="todo-item">
-                            <span class="item-title">todo item list&nbsp;<%= i %></span>
-                            <div class="item-property-wrapper">
-                                <span class="item-deadline">2019년 3월 14일</span>
-                            </div>
-                        </div>
-                    <% } %>
+                </div>
+                <div class="new-todo-item-input-wrapper">
+
                 </div>
             </div>
         </div>

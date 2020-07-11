@@ -81,7 +81,7 @@ html, body{
 .todo-item{
     display: block;
     padding: 10px 15px;
-    background-color: rgb(255, 209, 209);
+    background-color: rgb(255, 0, 0);
     border-radius: 10px;
 
     margin-bottom: 5px;
