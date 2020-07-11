@@ -1,5 +1,11 @@
 /* Global Util components */
 
+input{
+    background-color: red;
+    border: none;
+    outline: none;
+}
+
 .block-span{
     display: block;
 }

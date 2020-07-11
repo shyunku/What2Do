@@ -1,0 +1,31 @@
+> 프로젝트 예명: What2Do
+> 프로그램명: {미정}
+> Base: NWJS SDK::Node.js + Chromium
+> Target: PC (Windows)
+> Latest Version: 0.1.0
+
+>>>>>>>>>>>>>>>>>>>>>>>> Development To-do <<<<<<<<<<<<<<<<<<<<<<<<
+
+- Account
+    - Google Auth (Target)
+        로그인 시 디바이스의 appdata 파일에 저장 (재부팅시에도 자동 로그인 & 동기화)
+        https://blog.rajephon.dev/2017/11/28/Nodejs-Google-OAuth-2-0/ 참고
+    - Node-Machine-Id (Temporary)
+        구글 계정으로 User 식별
+        하지만 고려해야할게 많음 - 모듈을 통해 디바이스의 ID를 얻고 그것을 key로 임시 동기화
+        Firebase 기반
+        https://www.npmjs.com/package/node-machine-id
+- UI
+    - Right sidemenu
+
+
+
+>>>>>>>>>>>> 0.1.1 update <<<<<<<<<<<<
+
+- todo item 추가 구현 (임시 - serverless(front))
+
+
+>>>>>>>>>>>> 0.1.0 update <<<<<<<<<<<<
+
+- 이전 업데이트 내용 {생략}
+- Development To-do & update history
