@@ -25,7 +25,7 @@ function addTodoItem(title){
     <div class="todo-item" style="background-color: ${colorQuery}">
         <span class="item-title">${title}</span>
         <div class="item-property-wrapper">
-            <span class="item-deadline">2019년 3월 14일</span>
+            <span class="item-deadline">~2019/3/14</span>
         </div>
     </div>
     `);

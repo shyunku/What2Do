@@ -1,5 +1,4 @@
-> 프로젝트 예명: What2Do
-> 프로그램명: {미정}
+> 프로그램명: {미정} (예명: What2Do)
 > Base: NWJS SDK::Node.js + Chromium
 > Target: PC (Windows)
 > Latest Version: 0.1.1
@@ -15,8 +14,26 @@
         하지만 고려해야할게 많음 - 모듈을 통해 디바이스의 ID를 얻고 그것을 key로 임시 동기화
         Firebase 기반
         https://www.npmjs.com/package/node-machine-id
-- UI
+- UI/UX
     - Right sidemenu
+    - Left sidemenu
+        - font size 조정
+        - clickable items
+        - 새 목록(카테고리) 추가 구현(front)
+    - Main body
+        - 기간별 보기 버튼 구현
+        - Sort 구현
+        - item 추가시 옵션
+            - preference
+            - 기한
+            - 알림
+- Backend
+    - Firebase
+        - NMI 적용(temporary)
+        - DB 연동
+- 기타
+    - Readme 추가
+    - private/public 논의
 
 
 
