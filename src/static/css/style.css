@@ -4,6 +4,7 @@ html, body{
     display: block;
     height: 100%;
 
+    overflow-x: hidden;
     overflow-y: hidden;
 
     font-family: 'Do Hyeon', sans-serif;
@@ -80,8 +81,9 @@ html, body{
 
 .new-todo-item-input-wrapper{
     display: inline-block;
+    position: relative;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: rgb(216, 216, 216);
     border-radius: 5px;
 }
@@ -91,6 +93,36 @@ html, body{
     width: 80%;
     background-color: transparent;
     padding: 10px 15px;
+}
+
+#todo_item_input{
+    display: inline-block;
+    background-color: red;
+    vertical-align: middle;
+}
+
+#item_property_wrapper{
+    display: inline-block;
+}
+
+#new_item_detail_setting_btn{
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    top: -15px;
+    left: calc(50% - 50px);
+
+    border: none;
+    background-color: rgb(200, 200, 200);
+    padding: 0;
+    transition: 0.15s linear;
+    cursor: pointer;
+}
+
+#new_item_detail_setting_btn:hover{
+    background-color: rgb(177, 177, 177);
+    transition: 0.15s linear;
 }
 
 .todo-item{

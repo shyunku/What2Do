@@ -9,3 +9,7 @@ input{
 .block-span{
     display: block;
 }
+
+button:focus{
+    outline: none;
+}

@@ -1,9 +1,9 @@
 > 프로그램명: {미정} (예명: What2Do)
 > Base: NWJS SDK::Node.js + Chromium
 > Target: PC (Windows)
-> Latest Version: 0.1.1
+> Latest Version: 0.1.2
 
->>>>>>>>>>>>>>>>>>>>>>>> Development To-do <<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Development To-do <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 - Account
     - Google Auth (Target)
@@ -25,24 +25,33 @@
         - Sort 구현
         - item 추가시 옵션
             - preference
-            - 기한
+            - 기한 
             - 알림
+        - item eventlisten
+
 - Backend
     - Firebase
         - NMI 적용(temporary)
         - DB 연동
+        http://blog.naver.com/PostView.nhn?blogId=searphiel9&logNo=220902249276
+        https://forest71.tistory.com/165
 - 기타
     - Readme 추가
     - private/public 논의
 
 
+>>>>>>>>>>>>>>>>>>>>>>>> 0.1.2 update <<<<<<<<<<<<<<<<<<<<<<<<
 
->>>>>>>>>>>> 0.1.1 update <<<<<<<<<<<<
+- todo item 추가 구현 (firebase synchronization)
+- 추가될 item detail panel opening button 추가
+
+
+>>>>>>>>>>>>>>>>>>>>>>>> 0.1.1 update <<<<<<<<<<<<<<<<<<<<<<<<
 
 - todo item 추가 구현 (임시 - serverless(front))
 
 
->>>>>>>>>>>> 0.1.0 update <<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>> 0.1.0 update <<<<<<<<<<<<<<<<<<<<<<<<
 
 - 이전 업데이트 내용 {생략}
 - Development To-do & update history

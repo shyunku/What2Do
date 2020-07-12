@@ -1,3 +1,18 @@
+let firebaseConfig = {
+    apiKey: "AIzaSyCXuiJsLZbMKeEOcOHgOMJEndQ2hALmVyU",
+    authDomain: "what2do-8d1d3.firebaseapp.com",
+    databaseURL: "https://what2do-8d1d3.firebaseio.com",
+    projectId: "what2do-8d1d3",
+    storageBucket: "what2do-8d1d3.appspot.com",
+    messagingSenderId: "747463899902",
+    appId: "1:747463899902:web:c4944156f0e0dea54c83af",
+    measurementId: "G-5W55GS8RMB"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+let todoitems = {};
+
 $(()=>{
     const addNewTodoItemInput = $('#new_todo_item_input');
 
@@ -12,39 +27,53 @@ $(()=>{
         }
     });
 
-
-    debug();
+    // Listen todo item value changes (temporary)
+    const itemRef = firebase.database().ref("test/todo-items");
+    itemRef.on("value", function(snapshot){
+        const updatedData = snapshot.val();
+        if(updatedData != undefined){
+            updateItems(snapshot.val());
+        }else{
+            $('.todo-list').empty();
+        }
+    });
 });
 
 function addTodoItem(title){
     // Temporary
     let preference = parseInt(Math.random()*100);
-    let colorQuery = getTodoItemBoxColorQuery(preference);
-
-    $('.todo-list').prepend(`
-    <div class="todo-item" style="background-color: ${colorQuery}">
-        <span class="item-title">${title}</span>
-        <div class="item-property-wrapper">
-            <span class="item-deadline">~2019/3/14</span>
-        </div>
-    </div>
-    `);
 
     // Implement to upload item to server (later)
+    $.ajax({
+        url: '/post-todoitem',
+        type: 'POST',
+        data: {
+            title: title,
+            preference: preference,
+        },
+        success: function(res){
+
+        }
+    })
 }
 
-function debug(){
-    for(let i=0;i<20;i++){
-        let preference = parseInt(Math.random()*100);
+function updateItems(data){
+    todoitems = data;
+
+    $('.todo-list').empty();
+
+    Object.keys(todoitems).forEach((key)=>{
+        let item = todoitems[key];
+        let preference = item.preference;
         let colorQuery = getTodoItemBoxColorQuery(preference);
 
-        $('.todo-list').append(`
+        $('.todo-list').prepend(`
         <div class="todo-item" style="background-color: ${colorQuery}">
-            <span class="item-title">todo item &nbsp;${i}</span>
+            <span class="item-title">${item.title}</span>
             <div class="item-property-wrapper">
                 <span class="item-deadline">~2019/3/14</span>
             </div>
         </div>
         `);
-    }
+    });
 }

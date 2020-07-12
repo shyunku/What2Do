@@ -2,6 +2,12 @@
 <html lang="ko-kr">
     <head>
         <%- include("../shared/header.ejs") %>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
         <script src="js/home.js"></script>
         <title>What2Do</title>
     </head>
@@ -76,6 +82,14 @@
                 </div>
                 <div class="new-todo-item-input-wrapper">
                     <input id="new_todo_item_input" placeholder="Add new todo items...">
+                    <div id="item_property_wrapper">
+                        <!-- <input id="todo_item_input" type="range" min="0" max="100" value="50"> -->
+                    </div>
+                    <button id="new_item_detail_setting_btn">
+                        <svg width="100" height="15">
+                            <path d="M50 3 L30 12 L70 12 Z" fill="#555"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
