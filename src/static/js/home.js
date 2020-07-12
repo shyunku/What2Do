@@ -37,6 +37,8 @@ $(()=>{
             $('.todo-list').empty();
         }
     });
+
+    animate();
 });
 
 function addTodoItem(title){
@@ -76,4 +78,24 @@ function updateItems(data){
         </div>
         `);
     });
+}
+
+function animate(){
+    
+}
+
+function toggleDetailSettingPanel(){
+    const settingPanel = $('#item_detail_setting_panel');
+    let panelHeight = settingPanel.outerHeight();
+    if(settingPanel.hasClass("activated")){
+        settingPanel.removeClass("activated");
+        settingPanel.stop().animate({
+            top: '0px',
+        }, 600, 'easeOutBounce');
+    }else{
+        settingPanel.addClass("activated");
+        settingPanel.stop().animate({
+            top: `-${panelHeight}px`,
+        }, 600, 'easeOutBounce');
+    }
 }

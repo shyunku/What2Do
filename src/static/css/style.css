@@ -79,15 +79,64 @@ html, body{
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.item-property-wrapper{
+    float: right;
+}
+
 .new-todo-item-input-wrapper{
     display: inline-block;
     position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 10px;
     background-color: rgb(216, 216, 216);
     border-radius: 5px;
+
+    z-index: 10;
 }
 
+.todo-item{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+
+    box-sizing: border-box;
+}
+
+.item-title{
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    max-width: 90%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-deadline{
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+.todo-list::-webkit-scrollbar{
+    width: 4px;
+}
+
+.todo-list::-webkit-scrollbar-thumb{
+    background-color: rgb(197, 197, 197);
+    border-radius: 2px;
+}
+
+
+.todo-list::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(131, 131, 131);
+}
+
+/* Create new item */
 #new_todo_item_input{
     display: inline-block;
     width: 80%;
@@ -125,39 +174,30 @@ html, body{
     transition: 0.15s linear;
 }
 
-.todo-item{
-    display: block;
-    padding: 10px 15px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 5px;
+#item_detail_setting_panel{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background-color: rgba(160, 160, 160, 0.87);
 
-    margin-bottom: 5px;
+    z-index: 3;
 }
 
-.item-property-wrapper{
-    float: right;
+#new_todo_item_creator{
+    position: relative;
+    margin-top: 10px;
 }
 
-.item-title{
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-.item-deadline{
-    font-size: 0.8em;
-    vertical-align: middle;
-}
-
-.todo-list::-webkit-scrollbar{
-    width: 4px;
-}
-
-.todo-list::-webkit-scrollbar-thumb{
-    background-color: rgb(197, 197, 197);
-    border-radius: 2px;
-}
-
-
-.todo-list::-webkit-scrollbar-thumb:hover{
-    background-color: rgb(131, 131, 131);
+.animate-blinder{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 5;
 }
