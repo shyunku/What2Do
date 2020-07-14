@@ -9,14 +9,12 @@
 #account_info_wrapper{
     display: block;
     padding: 10px;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(230, 230, 230);
     font-size: 2em;
 }
 
 .left-sidemenu__list{
-    
-    font-size: 2em;
-    padding: 5px 10px;
+    font-size: 1.3em;
 }
 
 .left_sidemenu ul:nth-of-type(1) {
@@ -24,30 +22,42 @@
 }
 
 .left-sidemenu__list-item{
-    height: 40px;
+    padding: 8px 15px;
+}
+
+.left-sidemenu__list-item.selected{
+    background-color: rgb(103, 160, 197);
+}
+
+.left-sidemenu__list-item:hover:not(.selected){
+    background-color: rgb(201, 201, 201);
+    cursor: pointer;
 }
 
 .left-sidemenu__list-item i{
-    width:40px;
+    width: 30px;
 }
 
 .left-sidemenu__add{
     display: flex;
-    font-size:2em;
-    height:40px;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.left-sidemenu__add:hover{
+    background-color: rgb(156, 156, 156);
+    cursor: pointer;
 }
 
 .left-sidemenu__add-column:nth-of-type(1){
-    width:240px;
-    padding:5px 10px;
+    width: 240px;
 }
 
 
 .left-sidemenu__add-column:nth-of-type(2){
-    width:60px;
-    padding: 5px 10px;
+    width: 30px;
 }
 
 .left-sidemenu__add-column i{
-    width:40px;
+    width: 30px;
 }

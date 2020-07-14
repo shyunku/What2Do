@@ -25,13 +25,13 @@ function getFirebaseTestRef(){
 
 
 module.exports = {
-    addNewTodoItem: function(title, uid, preference){
+    addNewTodoItem: function(title, uid, importance){
         const testRef = getFirebaseTestRef().child('todo-items');
         const key = testRef.push().key;
         let updates = {};
         updates[key] = {
             title: title,
-            preference: preference,
+            importance: importance,
         };
         testRef.update(updates);
     },

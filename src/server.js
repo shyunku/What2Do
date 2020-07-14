@@ -44,6 +44,6 @@ app.get('/', (req, res) => {
 // POST
 app.post('/post-todoitem', (req, res) =>{
     const data = req.body;
-    fireman.addNewTodoItem(data.title, "<uid>", data.preference);
+    fireman.addNewTodoItem(data.title, "<uid>", data.importance);
     res.send('OK');
 });

@@ -13,17 +13,24 @@ firebase.initializeApp(firebaseConfig);
 
 let todoitems = {};
 
+const FLIP_SVG_ANIMATE_DURATION = 400;
+
 $(()=>{
     const addNewTodoItemInput = $('#new_todo_item_input');
+    const importanceSlider = $('#todo_item_importance_input');
 
     // add new todo items
     addNewTodoItemInput.on("keydown", function(e){
         if(e.keyCode === 13){
             const itemTitle = $(this).val();
+            const itemImportance = importanceSlider.val();
             $(this).val(``);
+            importanceSlider.val(0);
+            deactivateSettingPanel();
+            $('#importance_displayer').text(`중요도 (0)`);
 
             // add item named {title}
-            addTodoItem(itemTitle);
+            addTodoItem(itemTitle, itemImportance);
         }
     });
 
@@ -41,17 +48,14 @@ $(()=>{
     animate();
 });
 
-function addTodoItem(title){
-    // Temporary
-    let preference = parseInt(Math.random()*100);
-
+function addTodoItem(title, importance){
     // Implement to upload item to server (later)
     $.ajax({
         url: '/post-todoitem',
         type: 'POST',
         data: {
             title: title,
-            preference: preference,
+            importance: importance,
         },
         success: function(res){
 
@@ -66,8 +70,8 @@ function updateItems(data){
 
     Object.keys(todoitems).forEach((key)=>{
         let item = todoitems[key];
-        let preference = item.preference;
-        let colorQuery = getTodoItemBoxColorQuery(preference);
+        let importance = item.importance;
+        let colorQuery = getTodoItemBoxColorQuery(importance);
 
         $('.todo-list').prepend(`
         <div class="todo-item" style="background-color: ${colorQuery}">
@@ -81,21 +85,46 @@ function updateItems(data){
 }
 
 function animate(){
-    
+    const importanceView = $('#importance_displayer');
+    const importanceSlider = $('#todo_item_importance_input');
+
+    importanceSlider.on("input", function(){
+        let importance = $(this).val();
+        importanceView.text(`중요도 (${importance})`);
+    });
+
+    const deadlinePicker = $('#deadline_picker_btn');
+    deadlinePicker.on("click", ()=>{
+        $('#deadline_picker').datepicker("show");
+    });
 }
 
 function toggleDetailSettingPanel(){
     const settingPanel = $('#item_detail_setting_panel');
-    let panelHeight = settingPanel.outerHeight();
     if(settingPanel.hasClass("activated")){
-        settingPanel.removeClass("activated");
-        settingPanel.stop().animate({
-            top: '0px',
-        }, 600, 'easeOutBounce');
+        deactivateSettingPanel();
     }else{
-        settingPanel.addClass("activated");
-        settingPanel.stop().animate({
-            top: `-${panelHeight}px`,
-        }, 600, 'easeOutBounce');
+        activateSettingPanel();
     }
+}
+
+function activateSettingPanel(){
+    const settingPanel = $('#item_detail_setting_panel');
+    let panelHeight = settingPanel.outerHeight();
+    settingPanel.addClass("activated");
+    settingPanel.stop().animate({
+        top: `-${panelHeight}px`,
+    }, 600, 'easeOutBounce');
+    $('#flip_up_panel').fadeOut(FLIP_SVG_ANIMATE_DURATION);
+    $('#flip_back_panel').fadeIn(FLIP_SVG_ANIMATE_DURATION);
+}
+
+function deactivateSettingPanel(){
+    const settingPanel = $('#item_detail_setting_panel');
+    settingPanel.removeClass("activated");
+    settingPanel.stop().animate({
+        top: '0px',
+    }, 600, 'easeOutBounce');
+    $('#flip_up_panel').fadeIn(FLIP_SVG_ANIMATE_DURATION);
+    $('#flip_back_panel').fadeOut(FLIP_SVG_ANIMATE_DURATION);
 }
