@@ -90,10 +90,9 @@
                         </div>
                         <div class="detail-setting-item date-pickers-wrapper">
                             <button id="deadline_picker_btn">
-                                기한
-                                <input id="deadline_picker" type="text" style="visibility: hidden;">
-                            </button><button>
-                                시작일
+                                <input class="datepicker" id="deadline_picker" type="text" placeholder="기한" readonly>
+                            </button><button id="startline_picker_btn">
+                                <input class="datepicker" id="startline_picker" type="text" placeholder="시작일" readonly>
                             </button>
                         </div>
                         <button id="new_item_detail_setting_btn" onclick="toggleDetailSettingPanel();">

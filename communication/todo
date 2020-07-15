@@ -1,7 +1,7 @@
 > 프로그램명: {미정} (예명: What2Do)
 > Base: NWJS SDK::Node.js + Chromium
 > Target: PC (Windows)
-> Latest Version: 0.1.4
+> Latest Version: 0.1.5
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Development To-do <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -37,6 +37,12 @@
 - 기타
     - Readme 추가
     - private/public 논의
+
+
+>>>>>>>>>>>>>>>>>>>>>>>> 0.1.5 update <<<<<<<<<<<<<<<<<<<<<<<<
+
+- 일부분 반응형으로 구현
+- 기한 및 시작일 설정 가능 (front)
 
 
 >>>>>>>>>>>>>>>>>>>>>>>> 0.1.4 update <<<<<<<<<<<<<<<<<<<<<<<<

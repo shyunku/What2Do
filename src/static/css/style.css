@@ -4,6 +4,8 @@ html, body{
     display: block;
     height: 100%;
 
+    min-width: 375px;
+
     overflow-x: hidden;
     overflow-y: hidden;
 
@@ -232,12 +234,14 @@ html, body{
 .date-pickers-wrapper button{
     border: none;
     background-color: white;
-    padding: 5px 10px;
+    padding: 5px 8px;
     border-radius: 5px;
     margin-right: 8px;
 
     transition: 0.15s linear;
     cursor: pointer;
+
+    width: 150px;
 }
 
 .date-pickers-wrapper button:hover{
@@ -249,4 +253,39 @@ html, body{
 
 .date-pickers-wrapper button.selected{
     box-shadow: 0 0 2px 2px rgb(0, 132, 255);
+}
+
+.date-pickers-wrapper *{
+    cursor: pointer;
+}
+
+.datepicker{
+    background-color: transparent;
+}
+
+
+
+
+
+@media (max-width: 980px){
+    .left_sidemenu{
+        display: none;
+    }
+
+    #main_body_wrapper{
+        margin-left: 0;
+    }
+    
+}
+
+@media (max-width: 700px){
+    .item-sort-methods-wrapper{
+        display: none;
+    }
+}
+
+@media (max-width: 450px){
+    .item-viz-methods-wrapper{
+        display: none;
+    }
 }
